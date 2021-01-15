@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>samuelthomasster.github.io/nn/</loc>
+    <loc>http://example.org/nn/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="samuelthomasster.github.io/"
+                href="http://example.org/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="nn"
-                href="samuelthomasster.github.io/nn/"
+                href="http://example.org/nn/"
                 />
   </url>
   
