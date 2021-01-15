@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Pet Store API</title>
+    <link>samuelthomasster.github.io/</link>
+    <description>Recent content on Hugo Pet Store API</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="samuelthomasster.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swagger Petstore v1.0.5</title>
+      <link>samuelthomasster.github.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>samuelthomasster.github.io/</guid>
+      <description>Sample Petstore APIs  Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
+ This is a sample server Petstore server. You can find out more about Swagger at http://swagger.io or on irc.freenode.net, #swagger. For this sample, you can use the api key special-key to test the authorization filters.
+Base URLs:
+  https://petstore.swagger.io/v2
+  http://petstore.</description>
+    </item>
+    
+  </channel>
+</rss>
