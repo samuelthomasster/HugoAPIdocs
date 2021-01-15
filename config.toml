@@ -1,7 +1,7 @@
 theme = "docuapi"
 themesdir = "../.."
 languageCode = "en-us"
-baseurl = "https://google.com/"
+baseurl = "samuelthomasster.github.io"
 title = "Hugo Pet Store API"
 
 disableKinds = ["taxonomyTerm"]
