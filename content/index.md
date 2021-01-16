@@ -18,7 +18,7 @@ headingLevel: 2
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="swagger-petstore">Sample Petstore APIs</h1>
+<h1 id="swagger-petstore">Petstore APIs using Hugo</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
