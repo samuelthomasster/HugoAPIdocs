@@ -15,23 +15,23 @@ jobs:
         uses: actions/checkout@v2
         with: 
           submodules: true
- #         fetch-depth: 0 
+          fetch-depth: 0 
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       - name: Update theme  
-        run: git submodule update --init --recursive
+        run: 
+          git submodule update --init --recursive
+          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.79.1'
     
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
  
-        run: 
-          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
-          hugo
+        run: hugo
  
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
