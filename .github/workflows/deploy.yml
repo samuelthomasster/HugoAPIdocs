@@ -2,7 +2,7 @@ name: Deploy Hugo site to GH Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
         
   workflow_dispatch:
 
@@ -14,7 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-              # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
+        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
+      - name: Update theme  
         run: git submodule update --init --recursive
 
       - name: Setup hugo
