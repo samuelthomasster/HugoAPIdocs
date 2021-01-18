@@ -19,9 +19,8 @@ jobs:
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       
       - name: Update theme  
-        run: 
-          git submodule update --init --recursive
-#          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+        run: git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+#          git submodule update --init --recursive
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
@@ -39,7 +38,8 @@ jobs:
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/          
-        run: hugo --minify
+        run:
+          hugo --minify
  
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
