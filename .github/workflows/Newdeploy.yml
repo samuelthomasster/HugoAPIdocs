@@ -21,7 +21,7 @@ jobs:
       - name: Update theme  
         run: 
           git submodule update --init --recursive
-          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+#          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
