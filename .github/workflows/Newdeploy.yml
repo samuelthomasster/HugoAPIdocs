@@ -31,12 +31,12 @@ jobs:
  
         run: 
           git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
-          hugo --minify
+          hugo
  
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+        #  publish_dir: ./public
         # keep_files: true
         #   cname: example.com
