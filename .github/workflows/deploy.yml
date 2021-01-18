@@ -16,15 +16,6 @@ jobs:
         with: 
           submodules: true
           fetch-depth: 0 
-          run: git submodule add git@github.com:bep/docuapi.git themes/docuapi
-      # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
-      - name: Update theme  
-        run: git submodule update --init --recursive
-
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
           
       - name: cache
         uses: actions/cache@v2
@@ -33,6 +24,19 @@ jobs:
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-  
+          
+        
+      # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
+      - name: Update theme  
+        run: git submodule update --init --recursive
+      
+      - name: Import theme as submodule            
+        run: git submodule add git@github.com:bep/docuapi.git themes/docuapi
+      
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
                 
       - name: Build
         # remove --minify tag if you do not need it
