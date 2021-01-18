@@ -29,7 +29,9 @@ jobs:
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
  
-        run: hugo --minify
+        run: 
+          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+          hugo --minify
  
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
