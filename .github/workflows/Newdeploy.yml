@@ -13,9 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with: 
-          submodules: recursive
-          fetch-depth: 1 
+   #     with: 
+   #       submodules: recursive
+   #       fetch-depth: 1 
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       
     #  - name: Update theme  
@@ -45,6 +45,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        #  publish_dir: ./public
+          publish_dir: ./public
+          keep_files: true
         # keep_files: true
         #   cname: example.com
