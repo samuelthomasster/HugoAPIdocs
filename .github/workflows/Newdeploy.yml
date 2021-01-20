@@ -9,6 +9,9 @@ jobs:
   build:
     name: Build website
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.x]
     steps:
     - uses: actions/checkout@v2
       with: 
@@ -23,14 +26,21 @@ jobs:
     
     - name: Update theme  
       run: git submodule update --init --recursive
-      
-    - name: cache files
-      uses: actions/cache@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        path: ${TMPDIR}/hugo_cache
-        key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-hugomod-  
+        node-version: ${{ matrix.node-version }}
+  
+   # - name: install node
+   #   run: 
+   #     npm ci
+   #     mv node_modules ../..
+        
+    - name: installing node
+      run: 
+        npm install --only=dev
+        mv node_modules ../..   
     
     - name: Build
         # remove --minify tag if you do not need it
