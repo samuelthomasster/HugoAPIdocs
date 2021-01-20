@@ -18,27 +18,27 @@ jobs:
           fetch-depth: 1 
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       
-      - name: Update theme  
-        run:   git submodule update --init --recursive
+    #  - name: Update theme  
+    #    run:   git submodule update --init --recursive
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.79.1'
       
-      - name: cache files
-        uses: actions/cache@v2
-        with:
-          path: ${TMPDIR}/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-  
+  #    - name: cache files
+  #      uses: actions/cache@v2
+  #      with:
+  #        path: ${TMPDIR}/hugo_cache
+  #        key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+  #        restore-keys: |
+  #          ${{ runner.os }}-hugomod-  
     
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/          
         run:
-        #  git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+          git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
           hugo
  
       - name: Deploy
