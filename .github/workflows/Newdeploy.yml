@@ -13,9 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-   #     with: 
-   #       submodules: recursive
-   #       fetch-depth: 1 
+        with: 
+          submodules: recursive
+          fetch-depth: 1 
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       
     #  - name: Update theme  
