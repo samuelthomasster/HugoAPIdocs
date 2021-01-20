@@ -2,8 +2,7 @@ name: Deploying Hugo site to GH Pages
 
 on:
   push:
-    branches: [main]
-        
+    branches: [main] 
   workflow_dispatch:
 
 jobs:
@@ -11,20 +10,19 @@ jobs:
     name: Build website
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with: 
-          submodules: recursive
-          fetch-depth: 1 
+    - uses: actions/checkout@v2
+      with: 
+        submodules: recursive
+        fetch-depth: 1 
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
       
     #  - name: Update theme  
     #    run:   git submodule update --init --recursive
 
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.79.1'
+    - name: Setup hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+         hugo-version: '0.79.1'
       
   #    - name: cache files
   #      uses: actions/cache@v2
@@ -34,17 +32,17 @@ jobs:
   #        restore-keys: |
   #          ${{ runner.os }}-hugomod-  
     
-      - name: Build
+    - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/          
-      - run: git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
-      - run: hugo
+      run: git submodule add --force git@github.com:bep/docuapi.git themes/docuapi
+    - run: hugo
  
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          keep_files: true
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        keep_files: true
         # keep_files: true
         #   cname: example.com
