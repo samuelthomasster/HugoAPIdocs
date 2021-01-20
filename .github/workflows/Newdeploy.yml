@@ -32,15 +32,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
   
-   # - name: install node
-   #   run: 
-   #     npm ci
-   #     mv node_modules ../..
-        
-    - name: installing node
+    - name: install node
       run: 
-        npm install --only=dev
-        mv node_modules ../..   
+       npm ci
+       mv node_modules ../..
+        
+   # - name: installing node
+   #   run: 
+   #     npm install --only=dev
+   #     mv node_modules ../..   
     
     - name: Build
         # remove --minify tag if you do not need it
