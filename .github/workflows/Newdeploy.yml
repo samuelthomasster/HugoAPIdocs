@@ -22,8 +22,7 @@ jobs:
         hugo-version: '0.79.1'
     
     - name: Update theme  
-      run: hugo mod init
-    - run: git submodule update --init --recursive
+      run: git submodule update --init --recursive
       
     - name: cache files
       uses: actions/cache@v2
